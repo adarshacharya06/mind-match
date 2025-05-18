@@ -1,0 +1,154 @@
+/* Card Flip Animation */
+@keyframes flip {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Match Animation */
+@keyframes pulse {
+  0% {
+    transform: rotateY(180deg) scale(1);
+    box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.7);
+  }
+  50% {
+    transform: rotateY(180deg) scale(1.05);
+    box-shadow: 0 0 0 10px rgba(52, 199, 89, 0);
+  }
+  100% {
+    transform: rotateY(180deg) scale(1);
+    box-shadow: 0 0 0 0 rgba(52, 199, 89, 0);
+  }
+}
+
+.card.matched {
+  animation: pulse 0.75s ease-in-out;
+}
+
+/* Mismatch Animation */
+@keyframes shake {
+  0%, 100% {
+    transform: rotateY(180deg) translateX(0);
+  }
+  20%, 60% {
+    transform: rotateY(180deg) translateX(-5px);
+  }
+  40%, 80% {
+    transform: rotateY(180deg) translateX(5px);
+  }
+}
+
+.card.mismatch {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Modal Animation */
+@keyframes modal-appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Score Update Animation */
+@keyframes score-update {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+    color: var(--color-success);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.score-update {
+  animation: score-update 0.5s ease-out;
+}
+
+/* Level Up Animation */
+@keyframes level-up {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.level-up {
+  animation: level-up 0.8s ease-out;
+}
+
+/* Button Hover Animation */
+.button {
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.25);
+}
+
+.button:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 6px rgba(0, 122, 255, 0.15);
+}
+
+/* Game Board Appear Animation */
+@keyframes board-appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.game-board {
+  animation: board-appear 0.6s ease-out;
+}
+
+/* Timer Warning Animation */
+@keyframes timer-warning {
+  0%, 100% {
+    color: var(--color-neutral-700);
+  }
+  50% {
+    color: var(--color-warning);
+  }
+}
+
+.timer.warning {
+  animation: timer-warning 1s infinite;
+}
+
+/* Timer Critical Animation */
+@keyframes timer-critical {
+  0%, 100% {
+    color: var(--color-neutral-700);
+  }
+  50% {
+    color: var(--color-error);
+  }
+}
+
+.timer.critical {
+  animation: timer-critical 0.5s infinite;
+}
