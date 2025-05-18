@@ -1,0 +1,101 @@
+/* Base styles are for mobile */
+
+/* Small screens (mobile) */
+@media (max-width: 599px) {
+  .game-board {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .game-container {
+    padding: var(--space-2);
+  }
+  
+  .game-header h1 {
+    font-size: 2rem;
+  }
+  
+  .game-info {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .score-container, .level-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .game-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .button {
+    width: 100%;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 600px) and (max-width: 899px) {
+  .game-board {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .game-header h1 {
+    font-size: 2.25rem;
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 900px) {
+  .game-board {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  .game-container {
+    padding: var(--space-5);
+  }
+  
+  .game-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .card {
+    min-height: 180px;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1200px) {
+  .game-board {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  
+  .card {
+    min-height: 160px;
+  }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .game-container {
+    padding: var(--space-1);
+    gap: var(--space-2);
+  }
+  
+  .game-header h1 {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-1);
+  }
+  
+  .game-board {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  
+  .card {
+    aspect-ratio: 3/3.5;
+  }
+  
+  .game-controls {
+    flex-direction: row;
+  }
+}

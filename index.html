@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mind Match</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <div class="game-container">
+        <header class="game-header">
+          <h1  style="width:100%;background-color:rgba(55, 255, 28, 0.397);">Memory Match</h1>
+          <div class="game-info">
+            <div class="score-container">
+              <div class="score">Score: <span id="score">0</span></div>
+              <div class="best-score">Best: <span id="best-score">0</span></div>
+            </div>
+            <div class="level-container">
+              <div class="level">Level: <span id="level">1</span></div>
+              <div class="timer"><span id="minutes">00</span>:<span id="seconds">00</span></div>
+            </div>
+          </div>
+        </header>
+        
+        <div id="game-board" class="game-board"></div>
+        
+        <div class="game-controls">
+          <button id="start-button" class="button primary">Start Game</button>
+          <button id="reset-button" class="button secondary">Reset Game</button>
+        </div>
+        
+        <div id="level-complete" class="modal hidden">
+          <div class="modal-content">
+            <h2>Level Complete!</h2>
+            <p>You've completed level <span id="completed-level">1</span></p>
+            <p>Score: <span id="level-score">0</span></p>
+            <button id="next-level" class="button primary">Next Level</button>
+          </div>
+        </div>
+        
+        <div id="game-over" class="modal hidden">
+          <div class="modal-content">
+            <h2>Game Complete!</h2>
+            <p>Congratulations! You've completed all levels!</p>
+            <p>Final Score: <span id="final-score">0</span></p>
+            <p>Time: <span id="final-time">00:00</span></p>
+            <button id="play-again" class="button primary">Play Again</button>
+          </div>
+        </div>
+        
+        <button id="sound-toggle" class="sound-toggle" title="Toggle Sound"></button>
+      </div>
+    </div>
+    
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
